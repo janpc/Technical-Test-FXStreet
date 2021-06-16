@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 import { navBarColors as colors } from '../../styles/colors';
 
+import {
+  RoundButton as MainRoundButton,
+  LargeButton as MainLargeButton
+} from '../../styles/mainStyles';
+
 export const NavbarContainer = styled.div`
   height: 100%;
   width: 100%;
@@ -11,18 +16,12 @@ export const NavbarContainer = styled.div`
   align-items: center;
 `;
 
-export const RoundButton = styled.button`
-  width: 18px;
-  height: 18px;
-  border: none;
-  border-radius: 50%;
+export const RoundButton = styled(MainRoundButton)`
   ${({ type }) => `background-color: ${colors[`${type}Button`]};`}
 `;
 
-export const LargeButton = styled.button`
+export const LargeButton = styled(MainLargeButton)`
   width: 136px;
-  height: 10px;
-  border: none;
   ${({ type }) => `background-color: ${colors[`${type}Button`]};`}
 `;
 
