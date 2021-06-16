@@ -1,13 +1,16 @@
-import * as React from "react";
-import { Reset } from "styled-reset";
+import * as React from 'react';
+import { Reset } from 'styled-reset';
 
-import Posts from "./pages/Posts";
+import Posts from './pages/Posts';
+import Premium from './pages/Premium';
 
 function App() {
   return (
     <>
       <Reset />
-      <Posts />
+      <Premium>
+        <Posts />
+      </Premium>
     </>
   );
 }
