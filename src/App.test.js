@@ -8,7 +8,7 @@ import App from './App';
 describe('App Tests', () => {
   test('renders posts', () => {
     render(<App />);
-    const linkElement = screen.getByText(/posts/i);
+    const linkElement = screen.getByText(/latest/i);
     expect(linkElement).toBeInTheDocument();
   });
 });

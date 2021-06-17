@@ -1,13 +1,16 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { classifyPosts } from '../../utils/postsUtils';
+import PostsFilter from '../../components/PostsFilter';
+
+import { classifyPosts, LATEST } from '../../utils/postsUtils';
 
 import { Content, PostsContainer, WidgetContainer, Widget } from './styles';
 import { RoundButton, LargeButton } from '../../styles/mainStyles';
 
 const Posts = () => {
-  const [posts, setPosts] = React.useState([]);
+  const [posts, setPosts] = useState([]);
+  const [postsType, setPostsType] = useState(LATEST);
 
   async function getPosts() {
     const result = await axios(
@@ -16,14 +19,15 @@ const Posts = () => {
     setPosts(classifyPosts(result.data));
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     getPosts();
   }, []);
 
   return (
     <Content>
       <PostsContainer>
-        {posts?.latest?.map((post) => (
+        <PostsFilter setPostsType={setPostsType} selected={postsType} />
+        {posts[postsType]?.map((post) => (
           <p>{post.title}</p>
         ))}
       </PostsContainer>

@@ -1,14 +1,17 @@
+export const LATEST = 'latest';
+export const POPULAR = 'popular';
+
 function classifyPosts(posts) {
-  const result = {
-    latest: [],
-    popular: []
-  };
+  const result = {};
+
+  result[LATEST] = [];
+  result[POPULAR] = [];
 
   posts.forEach((post) => {
     if (post.isPopular) {
-      result.popular.push(post);
+      result[POPULAR].push(post);
     } else {
-      result.latest.push(post);
+      result[LATEST].push(post);
     }
   });
 

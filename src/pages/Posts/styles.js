@@ -12,11 +12,12 @@ export const Content = styled.div`
 `;
 
 export const PostsContainer = styled.section`
+  flex-basis: 700px;
   flex-grow: 7;
-  background-color: blue;
 `;
 
 export const WidgetContainer = styled.section`
+  flex-basis: 410px;
   flex-grow: 3;
   display: flex;
   flex-direction: column;

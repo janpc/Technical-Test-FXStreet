@@ -9,6 +9,7 @@ export const RoundButton = styled.button`
 `;
 
 export const LargeButton = styled.button`
+  max-width: 100%;
   ${({ width }) => `width: ${width};`}
   height: 10px;
   border: none;
