@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import PostsFilter from '../../components/PostsFilter';
+import Post from '../../components/Post';
 
 import { classifyPosts, LATEST } from '../../utils/postsUtils';
 
@@ -28,7 +29,7 @@ const Posts = () => {
       <PostsContainer>
         <PostsFilter setPostsType={setPostsType} selected={postsType} />
         {posts[postsType]?.map((post) => (
-          <p>{post.title}</p>
+          <Post postInfo={post} />
         ))}
       </PostsContainer>
       <WidgetContainer>

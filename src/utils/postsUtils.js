@@ -18,5 +18,39 @@ function classifyPosts(posts) {
   return result;
 }
 
-// eslint-disable-next-line import/prefer-default-export
-export { classifyPosts };
+function twoCharacterNums(num) {
+  if (num < 10) {
+    return `0${num}`;
+  }
+
+  return num;
+}
+
+function formatDate(date) {
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
+  ];
+
+  const myDate = new Date(date);
+
+  const Month = months[myDate.getMonth()];
+  const dd = twoCharacterNums(myDate.getDate());
+
+  const hh = twoCharacterNums(myDate.getHours());
+  const mm = twoCharacterNums(myDate.getMinutes());
+
+  return `${Month} ${dd}, ${hh}:${mm}`;
+}
+
+export { classifyPosts, formatDate };

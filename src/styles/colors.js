@@ -24,7 +24,14 @@ export const mainColors = {
     main: '#304C70',
     subtype: '#7598C4'
   },
-  separation: '#ECECF1'
+  separation: '#ECECF1',
+  post: {
+    background: '#FFFFFF88',
+    border: '#dddedf',
+    top: '#ECECF1',
+    feed: '#304C70',
+    subFeed: '#7598C4'
+  }
 };
 
 export const navbcrColors = {};
