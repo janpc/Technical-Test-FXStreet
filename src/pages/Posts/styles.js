@@ -14,6 +14,32 @@ export const Content = styled.div`
 export const PostsContainer = styled.section`
   flex-basis: 700px;
   flex-grow: 7;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  overflow: hidden;
+  overflow-y: auto;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${colors.background};
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${colors.text.neutral};
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${colors.text.main};
+  }
 `;
 
 export const WidgetContainer = styled.section`

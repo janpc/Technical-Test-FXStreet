@@ -44,6 +44,7 @@ export const ViewSelect = styled.span`
   font-size: 14.72px;
   line-height: 20px;
   color: ${colors.text.main};
+  margin-right: 5px;
 
   & > b {
     font-size: 17.6px;

@@ -3,7 +3,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { classifyPosts } from './postsUtils';
 
 describe('Classify posts tests', () => {
-  test('Empty arrays inside an object as a result of calling the function with empty array', () => {
+  it('Empty arrays inside an object as a result of calling the function with empty array', () => {
     const result = {
       latest: [],
       popular: []
@@ -12,7 +12,7 @@ describe('Classify posts tests', () => {
     expect(classifyPosts([])).toEqual(result);
   });
 
-  test('Order posts by popularity', () => {
+  it('Order posts by popularity', () => {
     const posts = [
       { title: 'is popular', isPopular: true },
       { title: "isn't popular", isPopular: false },

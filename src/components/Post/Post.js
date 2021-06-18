@@ -14,7 +14,12 @@ import {
   SubFeed,
   TextColor,
   PostInfo,
-  ProfileImage
+  ProfileImage,
+  NameAndCompany,
+  NameAndTitleContainer,
+  Title,
+  PostContent,
+  Separation
 } from './styles';
 
 const Post = ({ postInfo }) => {
@@ -47,12 +52,16 @@ const Post = ({ postInfo }) => {
 
       <PostInfo>
         <ProfileImage alt={author?.name} src={author?.imageUrl} />
-        <span>{author?.name}</span>
-        <span>{author?.companyName}</span>
-        <h2>{title}</h2>
+        <NameAndTitleContainer>
+          <NameAndCompany>{`${author?.name} | ${author?.companyName}`}</NameAndCompany>
+          <Title>{title}</Title>
+        </NameAndTitleContainer>
       </PostInfo>
-      {content && parse(content)}
-      {imageUrl && <img alt={title} src={imageUrl} />}
+      <Separation />
+      <PostContent>
+        {content && parse(content)}
+        {imageUrl && <img alt={title} src={imageUrl} />}
+      </PostContent>
     </PostContainer>
   );
 };
