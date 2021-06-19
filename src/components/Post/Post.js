@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import parse from 'html-react-parser';
 
-import { FaCaretRight, FaClock, FaFile } from 'react-icons/fa';
+import {
+  FaCaretRight,
+  FaRegClock,
+  FaRegFile,
+  FaRegHeart,
+  FaHeart,
+  FaRegBookmark,
+  FaBookmark,
+  FaEllipsisH
+} from 'react-icons/fa';
 
 import { formatDate } from '../../utils/postsUtils';
 
@@ -19,32 +28,36 @@ import {
   NameAndTitleContainer,
   Title,
   PostContent,
-  Separation
+  Separation,
+  BottomButtonsContainer,
+  LikeButton,
+  SaveButton,
+  OptionsButton
 } from './styles';
 
 const Post = ({ postInfo }) => {
   // eslint-disable-next-line operator-linebreak
   const { feed, subFeed, publicationTime, author, title, content, imageUrl } =
     postInfo;
+
+  const [isLiked, setIsLiked] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+  const [isShowingOptions, setIsShowingOptions] = useState(false);
+
+  console.log(isShowingOptions);
   return (
     <PostContainer>
       <TopInfo>
         <InfoContainer>
-          <TextColor color="#304C70">
-            <FaFile />
-          </TextColor>
+          <FaRegFile color="#304C70" />
           <Feed>{feed}</Feed>
-          <TextColor color="#7598C4">
-            <FaCaretRight />
-          </TextColor>
+          <FaCaretRight color="#7598C4" />
 
           <SubFeed>{subFeed}</SubFeed>
         </InfoContainer>
         <InfoContainer>
+          <FaRegClock color="#8C8D91" />
           <TextColor color="#49494F">
-            <FaClock />
-          </TextColor>
-          <TextColor color="#8C8D91">
             <time>{formatDate(publicationTime)}</time>
           </TextColor>
         </InfoContainer>
@@ -62,6 +75,19 @@ const Post = ({ postInfo }) => {
         {content && parse(content)}
         {imageUrl && <img alt={title} src={imageUrl} />}
       </PostContent>
+      <BottomButtonsContainer>
+        <LikeButton onClick={() => setIsLiked(!isLiked)} isLiked={isLiked}>
+          {isLiked ? <FaHeart size={25} /> : <FaRegHeart size={25} />}
+          <span>{isLiked ? 'Liked!' : 'Like'}</span>
+        </LikeButton>
+        <SaveButton onClick={() => setIsSaved(!isSaved)} isSaved={isSaved}>
+          {isSaved ? <FaBookmark size={25} /> : <FaRegBookmark size={25} />}
+          <span>{isSaved ? 'Saved!' : 'Save'}</span>
+        </SaveButton>
+        <OptionsButton onClick={() => setIsShowingOptions(true)}>
+          <FaEllipsisH sixe={25} />
+        </OptionsButton>
+      </BottomButtonsContainer>
     </PostContainer>
   );
 };

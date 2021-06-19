@@ -19,6 +19,8 @@ export const PostsContainer = styled.section`
   flex-direction: column;
   gap: 10px;
 
+  padding-bottom: 25px;
+
   overflow: hidden;
   overflow-y: auto;
 

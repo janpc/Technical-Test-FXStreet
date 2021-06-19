@@ -29,7 +29,7 @@ const Posts = () => {
       <PostsContainer>
         <PostsFilter setPostsType={setPostsType} selected={postsType} />
         {posts[postsType]?.map((post) => (
-          <Post postInfo={post} />
+          <Post key={post.id} postInfo={post} />
         ))}
       </PostsContainer>
       <WidgetContainer>

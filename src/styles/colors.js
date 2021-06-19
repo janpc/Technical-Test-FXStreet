@@ -18,7 +18,9 @@ export const mainColors = {
     main: '#49494F',
     light: '#A3A3A8',
     neutral: '#8C8D91',
-    highlight: '#E4871B'
+    highlight: '#E4871B',
+    red: '#D25746',
+    green: '#338473'
   },
   type: {
     main: '#304C70',
@@ -30,7 +32,8 @@ export const mainColors = {
     border: '#dddedf',
     top: '#ECECF1',
     feed: '#304C70',
-    subFeed: '#7598C4'
+    subFeed: '#7598C4',
+    clickBackground: '#F3F3F8'
   }
 };
 

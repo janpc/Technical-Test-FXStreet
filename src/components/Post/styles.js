@@ -125,3 +125,55 @@ export const PostContent = styled.div`
     width: 100%;
   }
 `;
+
+export const BottomButtonsContainer = styled.div`
+  margin: 0 30px 26px;
+  display: flex;
+  gap: 10px;
+`;
+
+const BottomButton = styled.button`
+  width: 100px;
+  color: ${colors.text.main};
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  cursor: pointer;
+
+  & * {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 17px;
+    pointer-events: none;
+  }
+`;
+
+export const LikeButton = styled(BottomButton)`
+  ${({ isLiked }) => isLiked && `color: ${colors.text.red};`}
+  &:hover,
+  &:focus {
+    color: ${colors.text.red};
+  }
+`;
+
+export const SaveButton = styled(BottomButton)`
+  ${({ isSaved }) => isSaved && `color: ${colors.text.green};`}
+  &:hover,
+  &:focus {
+    color: ${colors.text.green};
+  }
+`;
+
+export const OptionsButton = styled(BottomButton)`
+  width: 35px;
+  height: 35px;
+  &:hover,
+  &:focus {
+    background: ${colors.post.clickBackground};
+  }
+`;
