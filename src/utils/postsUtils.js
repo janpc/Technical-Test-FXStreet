@@ -1,6 +1,19 @@
 export const LATEST = 'latest';
 export const POPULAR = 'popular';
 
+function orderPosts(postsToOrder) {
+  let posts = [...postsToOrder];
+
+  posts = posts.sort((postA, postB) => {
+    const dateA = new Date(postA.publicationTime);
+    const dateB = new Date(postB.publicationTime);
+
+    return dateB - dateA;
+  });
+
+  return posts;
+}
+
 function classifyPosts(posts) {
   const result = {};
 
@@ -14,6 +27,9 @@ function classifyPosts(posts) {
       result[LATEST].push(post);
     }
   });
+
+  result[LATEST] = orderPosts(result[LATEST]);
+  result[POPULAR] = orderPosts(result[POPULAR]);
 
   return result;
 }
