@@ -9,12 +9,13 @@ export const Content = styled.div`
   gap: 27px;
   box-sizing: border-box;
   padding: 25px 25px 0;
+
+  @media (max-width: 480px) {
+    padding: 25px 5px 0;
+  }
 `;
 
 export const PostsContainer = styled.section`
-  flex-basis: 700px;
-  flex-grow: 7;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -23,6 +24,15 @@ export const PostsContainer = styled.section`
 
   overflow: hidden;
   overflow-y: auto;
+
+  @media (min-width: 1060px) {
+    flex-basis: 700px;
+    flex-grow: 7;
+  }
+
+  @media (max-width: 1060px) {
+    width: 100%;
+  }
 
   ::-webkit-scrollbar {
     width: 5px;
@@ -51,6 +61,10 @@ export const WidgetContainer = styled.section`
   flex-direction: column;
   gap: 24px;
   min-width: 210px;
+
+  @media (max-width: 1060px) {
+    display: none;
+  }
 `;
 
 export const Widget = styled.article`
