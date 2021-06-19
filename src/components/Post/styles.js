@@ -143,7 +143,7 @@ const BottomButton = styled.button`
 
   cursor: pointer;
 
-  & * {
+  & > * {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -169,9 +169,17 @@ export const SaveButton = styled(BottomButton)`
   }
 `;
 
+export const OptionsContainer = styled.div`
+  position: relative;
+`;
+
 export const OptionsButton = styled(BottomButton)`
   width: 35px;
   height: 35px;
+
+  ${({ isClicked }) =>
+    isClicked && `background: ${colors.post.clickBackground};`}
+
   &:hover,
   &:focus {
     background: ${colors.post.clickBackground};

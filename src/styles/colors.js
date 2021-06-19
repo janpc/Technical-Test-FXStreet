@@ -28,7 +28,7 @@ export const mainColors = {
   },
   separation: '#ECECF1',
   post: {
-    background: '#FFFFFF88',
+    background: '#FFFFFF',
     border: '#dddedf',
     top: '#ECECF1',
     feed: '#304C70',

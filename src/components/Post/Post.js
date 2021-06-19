@@ -13,6 +13,8 @@ import {
   FaEllipsisH
 } from 'react-icons/fa';
 
+import PostOptions from '../PostOptions';
+
 import { formatDate } from '../../utils/postsUtils';
 
 import {
@@ -32,7 +34,8 @@ import {
   BottomButtonsContainer,
   LikeButton,
   SaveButton,
-  OptionsButton
+  OptionsButton,
+  OptionsContainer
 } from './styles';
 
 const Post = ({ postInfo }) => {
@@ -44,7 +47,6 @@ const Post = ({ postInfo }) => {
   const [isSaved, setIsSaved] = useState(false);
   const [isShowingOptions, setIsShowingOptions] = useState(false);
 
-  console.log(isShowingOptions);
   return (
     <PostContainer>
       <TopInfo>
@@ -84,9 +86,15 @@ const Post = ({ postInfo }) => {
           {isSaved ? <FaBookmark size={25} /> : <FaRegBookmark size={25} />}
           <span>{isSaved ? 'Saved!' : 'Save'}</span>
         </SaveButton>
-        <OptionsButton onClick={() => setIsShowingOptions(true)}>
-          <FaEllipsisH sixe={25} />
-        </OptionsButton>
+        <OptionsContainer>
+          <OptionsButton
+            onClick={() => setIsShowingOptions(!isShowingOptions)}
+            isClicked={isShowingOptions}
+          >
+            <FaEllipsisH sixe={25} />
+          </OptionsButton>
+          {isShowingOptions && <PostOptions />}
+        </OptionsContainer>
       </BottomButtonsContainer>
     </PostContainer>
   );
