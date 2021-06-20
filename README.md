@@ -1,4 +1,4 @@
-# assemblerTechChallenge-web
+# Technical Test FXStreet
 
 This is my project for the Technical Test FXStreet. It's a simple webpage that is quite similar to one of their products.
 
