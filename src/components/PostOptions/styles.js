@@ -13,6 +13,8 @@ export const OptionsContainer = styled.div`
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
   width: fit-content;
   height: fit-content;
+
+  z-index: 1;
 `;
 
 export const ButtonsList = styled.ul`
