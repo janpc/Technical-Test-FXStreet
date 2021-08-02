@@ -20,7 +20,7 @@ _You need to install nodejs and yarn_
 _First clone the repository_
 
 ```
-git clone https://github.com/Musikverein/musikverein-project.git
+git clone https://github.com/janpc/Technical-Test-FXStreet.git
 ```
 
 _Then run yarn install in the base folder_
